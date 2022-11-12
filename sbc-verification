@@ -1,0 +1,23 @@
+- Verification
+  x Pinouts
+  x Labels
+  - Schematic circuit
+    - Pullups on clock outputs, etc
+  x Input pull-ups/downs
+  x Resistor values
+  x Capacitor values
+  x TTL/nmos compatibility
+  - Footprints / part availability
+  x QTPY 3.3V (500mA)
+  - 3rd party compatibility
+    - Sophia2
+    - NUC FujiNet
+    - SIO2SD
+
+TODO
+  - Define Atari 800XL AV board
+  - Routing
+  - Implement PLD glue logic
+  - Implement firmware power up/down
+  - Order parts
+  - Order PCBs

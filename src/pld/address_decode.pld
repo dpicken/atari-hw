@@ -1,0 +1,43 @@
+GAL22V10
+
+; Active-low signals '/' qualified
+; Pins [1, 12]
+phi2  a8    a9  a10 a11 a12   a13     a14     a15     pb0       pb1     GND
+; Pins [13, 24]
+/pb7  /ref  NC  NC  NC  /ram  a14Rom  /csRom  /csPia  /csPokey  /csGtia VCC
+
+; Equations
+; <signal_active> = <expression>
+; <expression>: List of AND product terms concatenated with the OR operator (disjunctive normal form).
+
+; [D8, FF] os                 | ram_hi
+; [D0, D7] io
+; [C0, CF] os                 | ram_hi
+; [A0, BF] cart_l   | basic   | ram_hi
+; [80, 9F] cart_r             | ram_hi
+; [58, 7F]                      ram_lo
+; [50, 57] selfTest           | ram_lo
+; [00, 5F]                      ram_lo
+
+; io        =  a15 &  a14 & /a13 & a12 & /a11
+; os        =  a15 &  a14 & /io
+;           =  a15 &  a14 &  a13  #  a15 & a14 & /a12  #  a15 & a14 & a11
+; basic     =  a15 & /a14 &  a13
+; cart_r    =  a15 & /a14 & /a13
+; selfTest  = /a15 &  a14 & /a13 & a12 & /a11
+; rom       =  os  #  basic  #  selfTest
+;           =  a15 &  a14 &  a13  #  a15 & a14 & /a12  #  a15 & a14 & a11  #  a15 & /a14 & a13  #  /a15 & a14 & /a13 & a12 & /a11
+; a14Rom    = basic
+; ram_hi    = a15 & /io
+; ram_lo    = /a15 & /selfTest
+; ram       = ram_lo # cart_r # basic # os
+
+csPia   = a15 & a14 & /a13 & a12 & /a11 & /a10 &  a9 &  a8
+csPokey = a15 & a14 & /a13 & a12 & /a11 & /a10 &  a9 & /a8
+csGtia  = a15 & a14 & /a13 & a12 & /a11 & /a10 & /a9 & /a8
+csRom   = a15 & a14 & a13  #  a15 & a14 & /a12  #  a15 & a14 & a11  #  a15 & /a14 & a13  #  /a15 & a14 & /a13 & a12 & /a11
+a14Rom  = a15 & /a14 & a13
+
+DESCRIPTION
+
+Atari memory map
