@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "Project_Atari_LSI")(type "KiCad")(uri "${KIPRJMOD}/../kicad/symbols/Atari_LSI.kicad_sym")(options "")(descr ""))
+  (lib (name "Project_Logic_Programmable")(type "KiCad")(uri "${KIPRJMOD}/../kicad/symbols/Logic_Programmable.kicad_sym")(options "")(descr ""))
+)
