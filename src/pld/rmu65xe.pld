@@ -4,16 +4,17 @@ GAL22V10
 
 ; Active-low signals '/' qualified
 ; Pins [1, 12]
-phi2  pb7     pb6     pb5     pb4     pb3     pb2     /w  /ram  a14 a15   GND
+phi2  pb7     pb6     pb5     pb4     pb3     pb2     /w     /ram  a14  a15    GND
 ; Pins [13, 24]
-phi0  a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  NC  NC    /we /halt VCC
+phi0  a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  phi0u  /oe   /we  /halt  VCC
 
 ; Equations
 ; <signal_active> = <expression>
 ; <expression>: List of AND product terms concatenated with the OR operator (disjunctive normal form).
 
 csRam   = ram & phi2
-we      = ram & w & phi0 & phi2
+we      = w & phi0
+oe      = VCC
 
 a14Ram  = a14
 a15Ram  = a15
