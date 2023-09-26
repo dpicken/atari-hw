@@ -4,9 +4,9 @@ GAL22V10
 
 ; Active-low signals '/' qualified
 ; Pins [1, 12]
-phi2  pb7     pb6     pb5     pb4     pb3     pb2     /w     /ram  a14  a15    GND
+nphi2  pb7     pb6     pb5     pb4     pb3     pb2     /w   /ram  a14     a15   GND
 ; Pins [13, 24]
-phi0  a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  phi0u  /oe   /we  /halt  VCC
+phi0   a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  /we  /halt /antic  phi2  VCC
 
 ; Equations
 ; <signal_active> = <expression>
@@ -14,7 +14,6 @@ phi0  a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  phi0u  /oe   /we  /halt  V
 
 csRam   = ram & phi2
 we      = w & phi0
-oe      = VCC
 
 a14Ram  = /a15 & a14 & /pb4 & pb2 # /pb4 & a15 & a14 # pb4 & a14
 a15Ram  = /a15 & a14 & /pb4 & pb3 # /pb4 & a15       # pb4 & a15

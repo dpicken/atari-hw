@@ -9,7 +9,7 @@ Limitations:
 
 ## BOM
 
-- [QT PY RP2040](https://www.adafruit.com/product/4900)
+- [Adafruit QT Py RP2040](https://www.adafruit.com/product/4900)
 - [POKEY Interposer](/doc/pokey-interposer.md)
 - [GTIA Interposer](/doc/gtia-interposer.md)
 - Breadboard
@@ -18,7 +18,13 @@ Limitations:
 
 ## Assembly
 
-It's advisable to flash the controller prior to installation.  There's a pre-built binary blob in this repository: [./firmware/atari-fw_qtpy.u2f](/firmware/atari-fw_qtpy.u2f).  See [atari-fw](https://github.com/dpicken/atari-fw#install-firmware-qt-py-rp2040) for further details.
+It's advisable to flash the QT Py prior to installation.
+
+Connect the QT Py to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the firmware to the `RPI-RP2` drive/mount (adjust the `RP2040_MOUNT` option as necessary):
+
+    RP2040_MOUNT=/Volumes/RPI-RP2 RP2040_BOARD=adafruit_qtpy_rp2040 make install-prebuilt-rp2040-fw
+
+(See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source).
 
 If necessary, desolder POKEY and GTIA from the Atari PCB and install DIP sockets in their place.
 
@@ -34,13 +40,13 @@ Install the assembled interposers:
 
 ![installed-interposers.jpeg](/jpeg/keyboard-usb/installed-interposers.jpeg)
 
-Bridge the 5V USB host jumper on the underside of the QT PY:
+Bridge the 5V USB host jumper on the underside of the QT Py:
 
 ![controller-5v-bridge.jpeg](/jpeg/keyboard-usb/controller-5v-bridge.jpeg)
 
 Build a break-out board (on a soldered or solderless breadboard):
 
-|QT PY|POKEY interposer J1|POKEY interposer J2|GTIA interposer J1 |65O2C  |
+|QT Py|POKEY interposer J1|POKEY interposer J2|GTIA interposer J1 |65O2C  |
 |-----|-------------------|-------------------|-------------------|-------|
 |5V   |                   |Pin 1              |                   |       |
 |3V   |Pin 1              |                   |Pin 1              |       |

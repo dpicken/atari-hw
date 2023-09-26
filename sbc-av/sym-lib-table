@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Project_Regulator_Switching")(type "KiCad")(uri "/Users/dan/projects/public/atari-hw/kicad/symbols/Regulator_Switching.kicad_sym")(options "")(descr ""))
+  (lib (name "Project_Amplifier_Video")(type "KiCad")(uri "/Users/dan/projects/public/atari-hw/kicad/symbols/Amplifier_Video.kicad_sym")(options "")(descr ""))
+)

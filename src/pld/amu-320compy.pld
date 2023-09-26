@@ -1,0 +1,47 @@
+GAL22V10
+
+; Address Management Unit (AMU)
+
+; Active-low signals '/' qualified
+; Pins [1, 12]
+phi2  a8        a9  a10  a11  a12   a13   a14      a15     pb0     pb1     GND
+; Pins [13, 24]
+pb7   /csPokey /io  pb4  pb5  /ram  /ref  /csGtia  /csPia  a14Rom  /csRom  VCC
+
+; Equations
+; <signal_active> = <expression>
+; <expression>: List of AND product terms concatenated with the OR operator (disjunctive normal form).
+
+; IO
+io      =  a15 &  a14 & /a13 & a12 & /a11 & /ref
+
+csPia   =  io  & /a10 &  a9 &  a8
+csPokey =  io  & /a10 &  a9 & /a8
+csGtia  =  io  & /a10 & /a9 & /a8
+
+; ROM   =  os                                  # basic                                 # self_test
+csRom   =  phi2 & a15 & a14 & /ref & pb0 & /io # phi2 & a15 & /a14 & a13 & /ref & /pb1 # phi2 & /a15 & a14 & /a13 & a12 & /a11 & /ref & pb0 & /pb7 & pb4 & pb5
+a14Rom  =                                               a15 & /a14 & a13
+
+; RAM   = /io & /csRom & /ref
+/ram    = io # csRom # ref
+
+DESCRIPTION
+
+Address Space
+
+[D8, FF] ram|os
+[D0, D7] io
+[C0, CF] ram|os
+[A0, BF] ram|basic
+[80, 9F] ram
+[58, 7F] ram
+[50, 57] ram|self_test
+[40, 4F] ram
+[00, 3F] ram
+
+32 KiB ROM
+
+[60-7F] basic (8 KiB)
+[40-5F] unused (8 KiB)
+[00-3F] os (16 KiB)

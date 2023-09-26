@@ -1,0 +1,32 @@
+GAL22V10
+
+; RAM Management Unit (RMU) - 128 KiB
+
+; Active-low signals '/' qualified
+; Pins [1, 12]
+nphi2  pb7     pb6     pb5     pb4     pb3     pb2     /w   /ram  a14     a15   GND
+; Pins [13, 24]
+phi0   a14Ram  a15Ram  a16Ram  a17Ram  a18Ram  /csRam  /we  /halt /antic  phi2  VCC
+
+; Equations
+; <signal_active> = <expression>
+; <expression>: List of AND product terms concatenated with the OR operator (disjunctive normal form).
+
+csRam   = ram & phi2
+we      = w & phi0
+
+        ; Sally                                                                              ; Antic
+a14Ram  = /a15 & a14 & /pb4 & /antic & pb2 # /pb4 & /antic & a15 & a14 # pb4 & /antic & a14 # /a15 & a14 & /pb5 & antic & pb2 # /pb5 & antic & a15 & a14 # pb5 & antic & a14
+a15Ram  = /a15 & a14 & /pb4 & /antic & pb3 # /pb4 & /antic & a15       # pb4 & /antic & a15 # /a15 & a14 & /pb5 & antic & pb3 # /pb5 & antic & a15       # pb5 & antic & a15
+a16Ram  = GND
+a17Ram  = GND
+a18Ram  = /a15 & a14 & /pb4 & /antic                                                        # /a15 & a14 & /pb5 & antic
+
+antic.R = halt
+
+DESCRIPTION
+
+128 KiB RAM decode:
+  - Sally banking enable: /pb4
+  - Antic banking enable: /pb5
+  - Bank selection bits: pb2, pb3

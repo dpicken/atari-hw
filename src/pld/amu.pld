@@ -4,9 +4,9 @@ GAL22V10
 
 ; Active-low signals '/' qualified
 ; Pins [1, 12]
-phi2  a8        a9  a10 a11 a12   a13   a14     a15     pb0     pb1     GND
+phi2  a8        a9  a10  a11  a12   a13   a14      a15     pb0     pb1     GND
 ; Pins [13, 24]
-pb7   /csPokey /io  NC  NC  /ram  /ref  /csGtia /csPia  a14Rom  /csRom  VCC
+pb7   /csPokey /io  pb4  pb5  /ram  /ref  /csGtia  /csPia  a14Rom  /csRom  VCC
 
 ; Equations
 ; <signal_active> = <expression>

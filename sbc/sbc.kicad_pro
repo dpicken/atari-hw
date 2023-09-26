@@ -487,6 +487,14 @@
       {
         "netclass": "Power",
         "pattern": "GND"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "SVIDEO*"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "AUDIO*"
       }
     ]
   },

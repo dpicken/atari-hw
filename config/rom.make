@@ -16,10 +16,12 @@ $(BUILD_DIR)/sbc-512.rom: $(BUILD_DIR)/sbc-256.rom
 	$(echo_build_message)
 	$(echo_recipe)cat $^ $^ >$@
 
-all: $(BUILD_DIR)/sbc-256.rom $(BUILD_DIR)/sbc-512.rom
+roms: $(BUILD_DIR)/sbc-256.rom $(BUILD_DIR)/sbc-512.rom
+
+all: roms
 
 .PHONY: install-sbc-rom-256
-install-sbc-rom: $(BUILD_DIR)/sbc-256.rom
+install-sbc-rom-256: $(BUILD_DIR)/sbc-256.rom
 	$(echo_build_message)
 	$(echo_recipe)minipro -p AT27C256R@DIP28 -w $^
 

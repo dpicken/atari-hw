@@ -1,0 +1,180 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 70a405b2-f186-46d4-b0d6-5ed00e186c95)
+
+  (paper "A4")
+
+  (title_block
+    (title "Atari SBC Case")
+    (date "2023-09-08")
+    (rev "1.1")
+  )
+
+  (lib_symbols
+    (symbol "Mechanical:MountingHole_Pad" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "H" (at 0 6.35 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "MountingHole_Pad" (at 0 4.445 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "mounting hole" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Mounting Hole with connection" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "MountingHole*Pad*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "MountingHole_Pad_0_1"
+        (circle (center 0 1.27) (radius 1.27)
+          (stroke (width 1.27) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "MountingHole_Pad_1_1"
+        (pin input line (at 0 -2.54 90) (length 2.54)
+          (name "1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+  )
+
+
+  (no_connect (at 43.18 45.72) (uuid 04c38a05-2162-401b-b273-689a0350bd30))
+  (no_connect (at 81.28 45.72) (uuid 0a579076-faa0-4c46-be5e-0cb4beeb7301))
+  (no_connect (at 68.58 45.72) (uuid 2431d09d-7b64-4458-a2d3-184612bea334))
+  (no_connect (at 55.88 45.72) (uuid ee8d414f-ffad-4ca6-a350-d477f8877289))
+
+  (symbol (lib_id "Mechanical:MountingHole_Pad") (at 55.88 43.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 66abad89-47d3-4e40-a3db-1953d35331a6)
+    (property "Reference" "H2" (at 59.055 40.6399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 59.055 43.1799 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_Pad" (at 55.88 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 55.88 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 8787cd8c-941b-43a1-b693-5a9ee3dc0e21))
+    (instances
+      (project "sbc-case"
+        (path "/70a405b2-f186-46d4-b0d6-5ed00e186c95"
+          (reference "H2") (unit 1)
+        )
+      )
+      (project "sbc"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "H2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole_Pad") (at 81.28 43.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 6a1c2df4-9810-4324-88b6-36ccd43fd439)
+    (property "Reference" "H4" (at 84.455 40.6399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 84.455 43.1799 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_Pad" (at 81.28 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 81.28 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6f32f8b5-9755-4575-84a9-a052ca59c917))
+    (instances
+      (project "sbc-case"
+        (path "/70a405b2-f186-46d4-b0d6-5ed00e186c95"
+          (reference "H4") (unit 1)
+        )
+      )
+      (project "sbc"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "H4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole_Pad") (at 43.18 43.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid d405781a-dd07-4f97-a392-acebca52182e)
+    (property "Reference" "H1" (at 46.355 40.6399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 46.355 43.1799 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_Pad" (at 43.18 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 43.18 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ca615458-c559-4ed7-8d2a-ca1536975576))
+    (instances
+      (project "sbc-case"
+        (path "/70a405b2-f186-46d4-b0d6-5ed00e186c95"
+          (reference "H1") (unit 1)
+        )
+      )
+      (project "sbc"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "H1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole_Pad") (at 68.58 43.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid fa3f8d33-efd5-4913-ab5e-782e271e8c61)
+    (property "Reference" "H3" (at 71.755 40.6399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 71.755 43.1799 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_Pad" (at 68.58 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 68.58 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5ebdec57-e257-4d0b-ba45-f51bba239129))
+    (instances
+      (project "sbc-case"
+        (path "/70a405b2-f186-46d4-b0d6-5ed00e186c95"
+          (reference "H3") (unit 1)
+        )
+      )
+      (project "sbc"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "H3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
