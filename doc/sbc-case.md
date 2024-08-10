@@ -1,6 +1,6 @@
 # SFF Case
 
-A skeletal "case" - lid and base - for the SFF system.
+A skeletal "case" - lid and base - for the [SFF system](https://github.com/dpicken/atari-hw/blob/main/doc/sbc.md).
 
 <img src="/jpeg/sbc-case/lid-and-base.jpeg" width="480">
 

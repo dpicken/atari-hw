@@ -1,6 +1,6 @@
 # SFF SD card adapter
 
-An SD card adapter / SIO peripheral emulator for the SFF system.
+An SD card adapter / SIO peripheral emulator for the [SFF system](https://github.com/dpicken/atari-hw/blob/main/doc/sbc.md).
 
 <img src="/jpeg/sbc-sd/assembled.jpeg" width="480">
 

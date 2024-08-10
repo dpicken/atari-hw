@@ -1,6 +1,6 @@
 # SFF Motherboard
 
-Motherboard for the SFF system.
+Motherboard for the [SFF system](https://github.com/dpicken/atari-hw/blob/main/doc/sbc.md).
 
 <img src="/jpeg/sbc-motherboard/tht.jpeg" width="480">
 

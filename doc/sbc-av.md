@@ -1,6 +1,6 @@
 # SFF Audio/Video adapter
 
-Audio/video adapter for the SFF system.
+Audio/video adapter for the [SFF system](https://github.com/dpicken/atari-hw/blob/main/doc/sbc.md).
 
 <img src="/jpeg/sbc-av/assembled.jpeg" width="480">
 

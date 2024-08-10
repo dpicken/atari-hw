@@ -33,7 +33,7 @@ Load a game:
 
 <img src="/jpeg/sbc/game.jpeg" width="480">
 
-# Building ROM, AMU, RMU and RP2040 images
+## Build ROM, AMU, RMU and RP2040 images
 
 Clone the following repos:
 
@@ -59,7 +59,7 @@ Optional: To (re)build the (pre-built) RP2040 firmware:
 
     make -C ./atari-fw distribute
 
-# Install images
+## Install images
 
 The ROM, AMU and RMU can be programmed with a `TL866 II Plus` and the `minipro` software.  Install the minipro, e.g.
 
@@ -69,13 +69,13 @@ Change into the atari-hw repo:
 
     cd ./atari-hw
 
-## AMU
+### AMU
 
 To program the AMU:
 
     make install-prebuilt-jed-amu
 
-## RMU
+### RMU
 
 To program the RMU with support for 320 KiB RAM (rambo, combined Sally/Antic banking):
 
@@ -93,7 +93,7 @@ WIP: To program the RMU with support for 128 KiB RAM (130XE, separate Sally/Anti
 
     make install-prebuilt-jed-rmu130xe
 
-## ROM
+### ROM
 
 A 27C256 compatible ROM/EPROM/EEPROM provides the OS and BASIC.
 
@@ -105,12 +105,12 @@ To program a W27C512 EEPROM:
 
     make install-sbc-rom-512
 
-## Raspberry Pi RP2040 board
+### RP2040
 
 The following RP2040 boards are supported:
 
-  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900)
-  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm)
+  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard only)
+  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/main/doc/sbc-sd.md))
 
 Connect a supported RP2040 board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP2040_MOUNT` option as necessary)...
 
