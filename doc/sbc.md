@@ -6,12 +6,12 @@
 
 Specs:
 
-- Original Atari LSI (Sally, Antic, GTIA, Pokey, PIA)
-- Two ATF22V10C implement address-space decoding and extended RAM:
+- Original Atari chipset (Sally, Antic, GTIA, Pokey, PIA)
+- Two simple programmable logic devices (ATF22V10C) implement address-space decoding and extended RAM:
   - AMU ("Address Management Unit") decodes the 16 bit address space
   - RMU ("Ram Management Unit") supports 320 KiB (compy or rambo) or 128 KiB (130XE) or 64 KiB (65XE) RAM
 - 32 KiB ROM (OS, BASIC)
-- USB keyboard interface (via a Raspberry Pi RP2040 board)
+- USB keyboard interface (via a Raspberry Pi RP-series microcontroller board)
 - Audio/Video header
 - SIO header
 - S-Video connector
@@ -33,7 +33,7 @@ Load a game:
 
 <img src="/jpeg/sbc/game.jpeg" width="480">
 
-## Build ROM, AMU, RMU and RP2040 images
+## Build ROM, AMU, RMU and RP-series microcontroller images
 
 Clone the following repos:
 
@@ -55,7 +55,7 @@ Optional: To (re)build the (pre-built) AMU and RMU images, install [rust](https:
     PATH=$PATH:~/bin
     make -C ./atari-hw distribute
 
-Optional: To (re)build the (pre-built) RP2040 firmware:
+Optional: To (re)build the (pre-built) RP-series microcontroller firmware:
 
     make -C ./atari-fw distribute
 
@@ -105,21 +105,26 @@ To program a W27C512 EEPROM:
 
     make install-sbc-rom-512
 
-### RP2040
+### RP-series microcontroller
 
-The following RP2040 boards are supported:
+The following RP2040/RP2350 boards are supported:
 
-  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard only)
-  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/main/doc/sbc-sd.md))
+  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard and builtin ATR library)
+  - [pimoroni tiny2350](https://shop.pimoroni.com/products/tiny-2350?variant=42092638699603) (supports a USB keyobard and builtin ATR library)
+  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard, builtin ATR library and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/main/doc/sbc-sd.md))
 
-Connect a supported RP2040 board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP2040_MOUNT` option as necessary)...
+Connect a supported board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP_MOUNT` option as necessary)...
 
 To program an adafruit qtpy rp2040:
 
-    RP2040_MOUNT=/Volumes/RPI-RP2 RP2040_BOARD=adafruit_qtpy_rp2040 make install-prebuilt-rp2040-fw
+    RP_MOUNT=/Volumes/RPI-RP2 RP_BOARD=adafruit_qtpy_rp2040 make install-prebuilt-rp-fw
+
+To program a pimoroni tiny2350:
+
+    RP_MOUNT=/Volumes/RP2350 RP_BOARD=pimoroni_tiny2350 make install-prebuilt-rp-fw
 
 To program a waveshare rp2040 zero:
 
-    RP2040_MOUNT=/Volumes/RPI-RP2 RP2040_BOARD=waveshare_rp2040_zero make install-prebuilt-rp2040-fw
+    RP_MOUNT=/Volumes/RPI-RP2 RP_BOARD=waveshare_rp2040_zero make install-prebuilt-rp-fw
 
 (See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source).
