@@ -9,14 +9,11 @@ An SD card adapter / SIO peripheral emulator for the [SFF system](https://github
 - [Gerber](https://github.com/dpicken/atari-hw/raw/main/gerber/sbc-sd.zip)
 - [BOM](/pdf/sbc-sd-bom.pdf)
 
-The firmware currently supports:
+The firmware supports:
 
 - Emulating a single Atari disk drive (D1)
 - Loading ATRs from the RP2040's flash
-
-Under-development:
-
-- Loading ATRs from the SD card
+- Loading ATRs from an exFat formatted SD card
 
 # Assembly notes
 
