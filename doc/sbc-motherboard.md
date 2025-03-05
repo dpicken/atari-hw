@@ -1,12 +1,12 @@
 # SFF Motherboard
 
-Motherboard for the [SFF system](https://github.com/dpicken/atari-hw/blob/main/doc/sbc.md).
+Motherboard for the [SFF system](https://github.com/dpicken/atari-hw/blob/master/doc/sbc.md).
 
 <img src="/jpeg/sbc-motherboard/tht.jpeg" width="480">
 
 - [Schematic](/pdf/sbc-schematic.pdf)
 - [Layout](/pdf/sbc-layout.pdf)
-- [Gerber](https://github.com/dpicken/atari-hw/raw/main/gerber/sbc.zip)
+- [Gerber](https://github.com/dpicken/atari-hw/raw/master/gerber/sbc.zip)
 - [BOM](/pdf/sbc-bom.pdf)
 
 # Assembly notes

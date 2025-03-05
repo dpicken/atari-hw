@@ -111,7 +111,7 @@ The following RP2040/RP2350 boards are supported:
 
   - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard and builtin ATR library)
   - [pimoroni tiny2350](https://shop.pimoroni.com/products/tiny-2350?variant=42092638699603) (supports a USB keyobard and builtin ATR library)
-  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard, builtin ATR library and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/main/doc/sbc-sd.md))
+  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard, builtin ATR library and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/master/doc/sbc-sd.md))
 
 Connect a supported board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP_MOUNT` option as necessary)...
 
