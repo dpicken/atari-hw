@@ -71,27 +71,31 @@ Change into the atari-hw repo:
 
 ### AMU
 
-To program the AMU:
+To program the AMU with support for 320 KiB RAM (compy, separate Sally/Antic banking):
+
+    make install-prebuilt-jed-amu320compy
+
+To program the AMU for all other RAM configurations:
 
     make install-prebuilt-jed-amu
 
 ### RMU
 
+To program the RMU with support for 320 KiB RAM (compy, separate Sally/Antic banking):
+
+    make install-prebuilt-jed-rmu320compy
+
 To program the RMU with support for 320 KiB RAM (rambo, combined Sally/Antic banking):
 
     make install-prebuilt-jed-rmu320rambo
 
+To program the RMU with support for 128 KiB RAM (130XE, separate Sally/Antic banking):
+
+    make install-prebuilt-jed-rmu130xe
+
 To program the RMU with support for 64 KiB RAM (65XE / 800XL):
 
     make install-prebuilt-jed-rmu65xe
-
-WIP: To program the RMU with support for 320 KiB RAM (compy, separate Sally/Antic banking):
-
-    make install-prebuilt-jed-rmu320compy
-
-WIP: To program the RMU with support for 128 KiB RAM (130XE, separate Sally/Antic banking):
-
-    make install-prebuilt-jed-rmu130xe
 
 ### ROM
 
