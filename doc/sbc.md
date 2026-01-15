@@ -119,16 +119,16 @@ The following RP2040/RP2350 boards are supported:
 
 Connect a supported board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP_MOUNT` option as necessary)...
 
-To program an adafruit qtpy rp2040:
+To program a waveshare rp2040 zero:
 
-    RP_MOUNT=/Volumes/RPI-RP2 RP_BOARD=adafruit_qtpy_rp2040 make install-prebuilt-rp-fw
+    RP_MOUNT=/Volumes/RPI-RP2 make install-prebuilt-rp-fw-waveshare_rp2040_zero
 
 To program a pimoroni tiny2350:
 
-    RP_MOUNT=/Volumes/RP2350 RP_BOARD=pimoroni_tiny2350 make install-prebuilt-rp-fw
+    RP_MOUNT=/Volumes/RP2350 make install-prebuilt-rp-fw-pimoroni_tiny2350
 
-To program a waveshare rp2040 zero:
+To program an adafruit qtpy rp2040:
 
-    RP_MOUNT=/Volumes/RPI-RP2 RP_BOARD=waveshare_rp2040_zero make install-prebuilt-rp-fw
+    RP_MOUNT=/Volumes/RPI-RP2 make install-prebuilt-rp-fw-adafruit_qtpy_rp2040
 
-(See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source).
+(See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source and for instructions for building firmware with a custom builtin ATR library).
