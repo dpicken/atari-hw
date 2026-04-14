@@ -11,4 +11,4 @@ Audio/video adapter for the [SFF system](https://github.com/dpicken/atari-hw/blo
 
 # Assembly notes
 
-Ensure the pin headers are installed on the rear of the board.  If the FMS6400 is sourced from somewhere like eBay/etc, then solder it first (solder would not flow onto the pins of about 70% of the batch I bought).
+Solder the FMS6400 first, then the remaining SMT components.  Ensure the pin headers are installed on the rear of the board.

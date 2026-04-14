@@ -11,25 +11,16 @@ An SD card adapter / SIO peripheral emulator for the [SFF system](https://github
 
 The firmware supports:
 
-- Emulating a single Atari disk drive (D1)
-- Loading ATRs from the RP2040's flash
-- Loading ATRs from an exFat formatted SD card
+- Emulating an Atari disk drive (D1)
+- Loading ATR and XEX images from the microcontroller's flash
+- Loading ATR and XEX images from an exFat formatted SD card
 
 # Assembly notes
 
-Solder the SD card socket first.
+Solder the SD card socket first, then the remaining SMT components:
 
-Insert all three pin headers into their respective locations on the SFF motherboard, then:
+<img src="/jpeg/sbc-sd/smt.jpeg" width="480">
 
-- Seat the SD card adapter board onto the pin headers
-- Seat the waveshare on top of the SD card adapter board
+Solder pin headers to the rear of the board and finally the waveshare RP2040:
 
-<img src="/jpeg/sbc-sd/sff-rear.jpeg" width="480">
-
-Ensure the stack is level, then the solder the pin headers.
-
-Remove from the SD adapter board from the SFF motherboard and flow solder through the remaining waveshare pins:
-
-<img src="/jpeg/sbc-sd/sd-rear.jpeg" width="480">
-
-Solder the remaining components.
+<img src="/jpeg/sbc-sd/underside.jpeg" width="480">

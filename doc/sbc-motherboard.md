@@ -11,11 +11,9 @@ Motherboard for the [SFF system](https://github.com/dpicken/atari-hw/blob/master
 
 # Assembly notes
 
-Solder the SMT components first, starting with the voltage level translators and oscillator, then solder the power connector and RP2040 headers:
+Solder the SMT components first, starting with the power section, then the voltage level translators, then the oscillator and finally the remaining components:
 
 <img src="/jpeg/sbc-motherboard/smt.jpeg" width="480">
-
-Install a (flashed) RP2040 controller, then test the GTIA osc, start, select and option signals.
 
 Solder the THT components, then install the ICs (flash the ROM, AMU and RMU first):
 

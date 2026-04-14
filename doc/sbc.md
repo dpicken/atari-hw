@@ -11,12 +11,16 @@ Specs:
   - AMU ("Address Management Unit") decodes the 16 bit address space
   - RMU ("Ram Management Unit") supports 320 KiB (compy or rambo) or 128 KiB (130XE) or 64 KiB (65XE) RAM
 - 32 KiB ROM (OS, BASIC)
-- USB keyboard interface (via a Raspberry Pi RP-series microcontroller board)
 - Audio/Video header
-- SIO header
 - S-Video connector
 - 3.5mm audio socket
-- 6.5mm x 2.5mm power jack (5V)
+- SIO header
+- USB-C power socket
+- Raspberry Pi RP-series microcontroller provides:
+  - USB keyboard interface
+  - SIO disk drive (D1)
+  - SIO file system device (ATR and XEX image selection)
+  - microSD card support (SD, SDHC, SDXC, exFAT)
 
 Hardware:
 
@@ -25,9 +29,26 @@ Hardware:
 - [SFF SD card adapter](/doc/sbc-sd.md)
 - [SFF Case](/doc/sbc-case.md)
 
+Key map:
+
+| USB Key  | Atari Key or Action              |
+|----------|----------------------------------|
+| F1       | Help                             |
+| F2       | Start                            |
+| F3       | Select                           |
+| F4       | Option                           |
+| F10      | D1: insert !sbc-filer.xex (file system UI) |
+| F11      | D1: eject                        |
+| F12      | Reset                            |
+| Ctrl-F12 | Toggle power on/off              |
+
 Atari self-test:
 
 <img src="/jpeg/sbc/self-test.jpeg" width="480">
+
+File System UI:
+
+<img src="/jpeg/sbc/sbc-filer.jpeg" width="480">
 
 Load a game:
 
@@ -41,7 +62,7 @@ Clone the following repos:
     git clone https://github.com/dpicken/atari-fw.git
     git clone https://github.com/dpicken/fab.git
 
-Acquire Atari's XL/XE OS and BASIC ROM images and copy them to `./atari-fw/third-party/rom`, e.g.
+Acquire Atari's XL/XE OS and BASIC ROM images and copy them to `./atari-hw/third-party/rom`, e.g.
 
     cp ~/Downloads/OS_REV3_XE.rom ./atari-hw/third-party/rom/os.rom
     cp ~/Downloads/BASIC_C.rom    ./atari-hw/third-party/rom/basic.rom
@@ -113,9 +134,9 @@ To program a W27C512 EEPROM:
 
 The following RP2040/RP2350 boards are supported:
 
-  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard and builtin ATR library)
-  - [pimoroni tiny2350](https://shop.pimoroni.com/products/tiny-2350?variant=42092638699603) (supports a USB keyobard and builtin ATR library)
-  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard, builtin ATR library and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/master/doc/sbc-sd.md))
+  - [waveshare rp2040 zero](https://www.waveshare.com/rp2040-zero.htm) (supports a USB keyboard, builtin ATR/XEX library and [SFF SD card adapter](https://github.com/dpicken/atari-hw/blob/master/doc/sbc-sd.md))
+  - [pimoroni tiny2350](https://shop.pimoroni.com/products/tiny-2350?variant=42092638699603) (supports a USB keyboard and builtin ATR/XEX library)
+  - [adafruit qtpy rp2040](https://www.adafruit.com/product/4900) (supports a USB keyboard and builtin ATR/XEX library)
 
 Connect a supported board to the build host, then boot it into it's bootloader (hold the boot button then press and release the reset button).  Next, copy the appropriate firmware to the `RPI-RP2` drive/mount (adjust the `RP_MOUNT` option as necessary)...
 
@@ -131,4 +152,4 @@ To program an adafruit qtpy rp2040:
 
     RP_MOUNT=/Volumes/RPI-RP2 make install-prebuilt-rp-fw-adafruit_qtpy_rp2040
 
-(See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source and for instructions for building firmware with a custom builtin ATR library).
+(See [atari-fw](https://github.com/dpicken/atari-fw) for the firmware source and for instructions for building firmware with a custom builtin ATR/XEX library).
